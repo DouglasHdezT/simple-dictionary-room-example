@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Dictionary</string>
+    <string name="title_text">Insert new term</string>
+    <string name="insert_word_hint">Insert word</string>
+    <string name="insert_description_hint">Insert description</string>
+    <string name="add_action_text">Add</string>
 </resources>
