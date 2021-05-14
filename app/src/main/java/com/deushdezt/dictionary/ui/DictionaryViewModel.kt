@@ -25,6 +25,8 @@ class DictionaryViewModel(private val termRepository: TermRepository): ViewModel
             if(!wordInput.value.isNullOrEmpty() && !descriptionInput.value.isNullOrEmpty()){
                 val newTerm = Term(wordInput.value!!, descriptionInput.value!!)
                 termRepository.insertOrUpdate(newTerm)
+                wordInput.value = ""
+                descriptionInput.value = ""
             }
         }
     }
