@@ -1,44 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="@dimen/default_gap"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:text="@string/insert_text"
-        android:gravity="center"
-        style="@style/TextAppearance.AppCompat.Title"
-        android:layout_marginBottom="@dimen/default_gap"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <data>
 
-    <EditText
-        android:hint="@string/insert_word_hint"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    </data>
 
-    <EditText
-        android:hint="@string/insert_description_hint"
-        android:inputType="textMultiLine"
-        android:maxLines="3"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <ScrollView
-        android:layout_marginTop="@dimen/default_gap"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:padding="@dimen/default_gap"
+        tools:context=".MainActivity">
 
         <TextView
-            android:id="@+id/result_text"
+            android:text="@string/insert_text"
+            android:gravity="center"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_marginBottom="@dimen/default_gap"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
-    </ScrollView>
+        <EditText
+            android:hint="@string/insert_word_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-</LinearLayout>
+        <EditText
+            android:hint="@string/insert_description_hint"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:layout_marginTop="@dimen/default_gap"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/result_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>
