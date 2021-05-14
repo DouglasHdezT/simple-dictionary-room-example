@@ -3,4 +3,5 @@
     <string name="insert_text">Insert new word</string>
     <string name="insert_word_hint">Insert word</string>
     <string name="insert_description_hint">Insert description</string>
+    <string name="add_action_text">Add</string>
 </resources>

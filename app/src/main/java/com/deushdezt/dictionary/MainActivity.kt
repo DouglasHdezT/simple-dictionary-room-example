@@ -29,6 +29,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
+
+        binding.apply {
+            viewmodel = dictionaryViewModel
+            lifecycleOwner = this@MainActivity
+        }
+
+        dictionaryViewModel.terms.observe(this) {
+            dictionaryViewModel.updateShowedText(it)
+        }
+
         setContentView(binding.root)
     }
 }
