@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="default_gap">16dp</dimen>
+    <dimen name="border_gap">4dp</dimen>
+    <dimen name="inner_gap">8dp</dimen>
 </resources>

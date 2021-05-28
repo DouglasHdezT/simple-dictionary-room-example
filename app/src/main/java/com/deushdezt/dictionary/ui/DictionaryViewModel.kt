@@ -15,9 +15,6 @@ class DictionaryViewModel(private val termRepository: TermRepository): ViewModel
 
     val termList = termRepository.findAll()
 
-    private val _showedText = MutableLiveData("")
-    val showedText: LiveData<String> get() = _showedText
-
     fun onSubmit() {
         viewModelScope.launch {
             if(!wordInput.value.isNullOrEmpty() && !descriptionInput.value.isNullOrEmpty()){
@@ -29,13 +26,9 @@ class DictionaryViewModel(private val termRepository: TermRepository): ViewModel
         }
     }
 
-    fun updateShowedText(terms: List<Term>){
-        var newtext = ""
-        terms.forEach{
-            newtext += "Termino: ${it.word}\n\t\t\tDesc: ${it.description}\n\n"
+    fun onDeleteTerm(term: Term) {
+        viewModelScope.launch {
+            termRepository.delete(term)
         }
-
-        _showedText.value = newtext
     }
-
 }

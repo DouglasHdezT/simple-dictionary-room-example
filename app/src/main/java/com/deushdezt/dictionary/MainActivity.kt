@@ -3,7 +3,9 @@ package com.deushdezt.dictionary
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.RecyclerView
 import com.deushdezt.dictionary.databinding.ActivityMainBinding
+import com.deushdezt.dictionary.ui.DictionaryAdapter
 import com.deushdezt.dictionary.ui.DictionaryViewModel
 import com.deushdezt.dictionary.ui.DictionaryViewModelFactory
 
@@ -29,13 +31,21 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val dictionaryAdapter = DictionaryAdapter {
+            dictionaryViewModel.onDeleteTerm(it)
+        }
+
         binding.apply {
             viewmodel = dictionaryViewModel
             lifecycleOwner = this@MainActivity
         }
 
+        findViewById<RecyclerView>(R.id.terms_rv).apply {
+            adapter = dictionaryAdapter
+        }
+
         dictionaryViewModel.termList.observe(this) {
-            dictionaryViewModel.updateShowedText(it)
+            dictionaryAdapter.setData(it)
         }
     }
 }

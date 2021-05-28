@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/border_gap"
+    app:cardUseCompatPadding="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_gap"
+            android:layout_marginTop="@dimen/default_gap"
+            android:layout_marginEnd="@dimen/inner_gap"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            tools:text="Agua"
+            app:layout_constraintEnd_toStartOf="@+id/delete_item_action"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/description_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_gap"
+            android:layout_marginEnd="@dimen/default_gap"
+            android:layout_marginBottom="@dimen/default_gap"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/title_item"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            tools:text="Sustancia líquida sin olor, color ni sabor que se encuentra en la naturaleza en estado más o menos puro formando ríos, lagos y mares, ocupa las tres cuartas partes del planeta Tierra y forma parte de los seres vivos; está constituida por hidrógeno y oxígeno ( H2 O )." />
+
+        <ImageButton
+            android:id="@+id/delete_item_action"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="@dimen/default_gap"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="@+id/title_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/title_item" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/border_gap"
+            android:layout_marginEnd="@dimen/border_gap"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/title_item"
+            app:layout_constraintTop_toBottomOf="@+id/title_item" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
